@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    {% extends 'base.html' %}
+
+    {% block title %}My Home Page{% endblock %}
+
+    {% block extrahead %}
+      <link rel="stylesheet" href="{% static 'css/index.css' %}"> # extrahead를 통해 추가로 링크 삽입 가능
+    {% endblock %}
+
+    {% block content %}
+        <h1>Welcome to my website!</h1>
+    {% endblock %}
+</body>
+</html>
