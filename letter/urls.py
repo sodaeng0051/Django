@@ -1,7 +1,6 @@
-from django.urls import include
+from django.urls import path
+from . import views
 
 urlpatterns = [
-  path('admin/', admin.site.urls),
-  path('', include('rolling.urls')),
-  path('accounts/', include('accounts.urls')),
+  path('', views.letter_log, name='letter_log')
 ]
