@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+{%load static%}
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+          *{
+            padding: 0;
+            margin: 0;
+            border: none;
+
+        }
+        img{
+            display: block;
+            margin: auto;
+            margin-top: 50px;
+            position: relative;
+        }
+        a{
+            text-decoration-line: none;
+            color: black;
+        }
+        .title1{
+            position: absolute;
+             top: 35%;
+            left: 50%;
+            transform: translate( -50%, -50% );
+            font-size: 150%;
+        }
+        .title2{
+            position: absolute;
+            top: 40%;
+            left: 55%;
+            font-size: 150%;
+        }
+        .title3{
+            position: absolute;
+            top: 40%;
+            right: 55%;
+            font-size: 150%;
+        }
+        .title4{
+            position: absolute;
+            bottom: 40%;
+            left: 40%;
+            font-size: 150%;
+        }
+        .title5{
+            position: absolute;
+            bottom: 45%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            font-size: 150%;
+        }
+        .title6{
+            position: absolute;
+            bottom: 40%;
+            right: 40%;
+            font-size: 150%;
+        }
+        .title7{
+            position: absolute;
+            top: 25%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            font-size: 150%;
+        }
+    </style>
+</head>
+<body>
+    <div style="text-align: center;">
+       <img src="{% static 'image/tree1.png' %}">
+    </div>
+    <div class="title1">
+        <p><a href="">쪽지1</a></p>
+    </div>
+    <div class="title2">
+        <p><a href="">쪽지2</a></p>
+    </div>
+    <div class="title3">
+        <p><a href="">쪽지3</a></p>
+    </div>
+    <div class="title4">
+        <p><a href="">쪽지4</a></p>
+    </div>
+    <div class="title5">
+        <p><a href="">쪽지5</a></p>
+    </div>
+    <div class="title6">
+        <p><a href="">쪽지6</a></p>
+    </div>
+    <div class="title7">
+        <p><a href="">쪽지7</a></p>
+    </div>
+</body>
+</html>
