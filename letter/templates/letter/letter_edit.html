@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset = 'utf-8'>
+</head>
+<style>
+        body {
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+        table.table2{
+                border-collapse: separate;
+                border-spacing: 1px;
+                text-align: left;
+                line-height: 1.5;
+                margin-top: 150px;
+                font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+        table.table2 tr {
+                 width: 50px;
+                 padding: 10px;
+                font-weight: bold;
+                vertical-align: top;
+        }
+        table.table2 td {
+                 width: 100px;
+                 padding: 10px;
+                 vertical-align: top;
+                 font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+        table.table2 td > input[type="submit"]{
+            color: #fff;
+            font-size: 16px;
+            background-color: rgb(144, 144, 144);
+            margin-top: 20px;
+            border: none;
+            border-radius: 5px;
+            width: 100px;
+            height: 30px;
+        }
+
+</style>
+<body>
+        <form method = "post" action ="">
+        <table  style="padding-top:50px" align = center width=700 border=0 cellpadding=2 >
+                <tr>
+                <td bgcolor=white>
+                <table class = "table2">
+                        <tr>
+                        <td><input type = text name = name size=20 placeholder="Writer"> </td>
+                        </tr>
+
+                        <tr>
+                        <td><input type = text name = title size=80 placeholder="Title"></td>
+                        </tr>
+
+                        <tr>
+                        <td><textarea name = content cols=85 rows=15 placeholder="Content"></textarea></td>
+                        </tr>
+
+                        <tr>
+                        <td><a href="{% url 'letter_write'%}"><input type="submit" value="Delete"></a></td>
+                        </tr>
+                </table>
+                </td>
+                </tr>
+        </table>
+        </form>
+</body>
