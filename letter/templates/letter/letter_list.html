@@ -1,37 +1,195 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>List</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.1/font/boot-strap-icons.css">
-    <style>
-        .container{
-            margin-top: 20px;
+<html>
+    <head>
+        <title></title>
+        <style>
+        html {
+            font-family: "Noto Sans KR", sans-serif;
         }
+        body {overflow:hidden}
+        /* 노말라이즈 */
+
+        h3 {
+            margin-top: 300px;
+            margin-left: 25%;
+            overflow: hidden;
+            list-style: none;
+        }
+        a:link {
+            color: lightblue;
+        }
+
+        /* 라이브러리 */
+        .con {
+            margin: 0 auto;
+        }
+
+        .img-box>img {
+            width: 100%;
+            display: block;
+        }
+
+        .row::after {
+            content: "";
+            display: block;
+            clear: both;
+        }
+
+        .cell {
+            float: left;
+            box-sizing: border-box;
+        }
+
+        .cell-right {
+            float: right;
+            box-sizing: border-box;
+        }
+
+        .margin-0-auto {
+            margin: 0 auto;
+        }
+
+        .block {
+            display: block;
+        }
+
+        .inline-block {
+            display: inline-block;
+        }
+
+        .text-align-center {
+            text-align: center;
+        }
+
+        .line-height-0-ch-only {
+            line-height: 0;
+        }
+
+        .line-height-0-ch-only>* {
+            line-height: normal;
+        }
+
+
+        .absolute-middle {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        /* 커스텀 */
+        /* 반응형 레이아웃 */
+        .con {
+            max-width: 950px;
+        }
+
+        .con-min-width {
+            min-width: 320px;
+        }
+
+        .top-menu a {
+            text-decoration: none;
+            color: gray;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        html, body {
+            overflow-x: hidden;
+        }
+
+        .table-common>table {
+            width: 50%;
+            margin: auto;
+            border-collapse: collapse;
+        }
+
+        .table-common .btn-box {
+            text-align:center;
+        }
+
+        .table-common>table th, .table-common>table td {
+            border: 1px solid black;
+            padding: 10px;
+        }
+
+        .article-list table {
+            border:none;
+            border-top:2px solid lightgray;
+            border-bottom:2px solid lightgray;
+        }
+
+        .article-list > table th, .article-list > table td {
+            border:none;
+        }
+
+
+        .reply {
+            margin-top:20px;
+            border:2px solid lightgray;
+            padding:15px;
+            box-sizing:border-box;
+        }
+
+        .reply-list > table {
+            border:none;
+        }
+
+        .reply-list > table th {
+            display:none;
+        }
+
+        .reply-list > table td {
+            border:none;
+        }
+
+        .reply-list > table tr:nth-child(2n+1) {
+            background-color:rgba(0,0,0,0.06);
+        }
+
+        .reply-list > table td:first-child {
+            font-weight:bold;
+        }
+
     </style>
-</head>
-<body>
-    <div class="container">
-        <h4>List</h4>
-        <ul class="list-group">
-            {% for letter in letters %}
-            <li class="list-group-item">
-                <a href="{% url 'letter_list' pk=letter.pk %}">{{letter.title}}</a>
-                {% if letter.important %}
-                    <span class="badge badge-danger">!</span>
-                {% endif %}
-                <div style="float:right">
-                    <a href="" class="btn btn-outline-primary">확인</a>
-                    <a href="" class="btn btn-danger">수정/삭제</a>
-                </div>
-            </li>
-            {% endfor %}
-        </ul>
-        <br>
-        <p>
-            <a href=""><button type="button" class="btn btn-outline-success">확인한 편지 목록</button></button></a>
-        </p>
-    </div>
-</body>
+    </head>
+    <body>
+            <h3><a href="{% url 'letter_list' %}">작성 글</a></h3>
+            <section class="reply-list table-common">
+                <table border="1">
+                    <colgroup>
+                        <col width="150px">
+                    </colgroup>
+                    <thead>
+                        <tr>
+                            <th>내용</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>내용</td>
+                        </tr>
+                        <tr>
+                            <td>내용</td>
+                        </tr>
+                        <tr>
+                            <td>내용</td>
+                        </tr>
+                        <tr>
+                            <td>내용</td>
+                        </tr>
+                        <tr>
+                            <td>내용</td>
+                        </tr>
+                        <tr>
+                            <td>내용</td>
+                        </tr>
+                        <tr>
+                            <td>내용</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+
+        <footer></footer>
+    </body>
 </html>
