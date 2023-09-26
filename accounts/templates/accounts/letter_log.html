@@ -8,9 +8,6 @@
             border: none;
         }
         body{
-            background-image: url('tree.jpg');
-            background-repeat: no-repeat;
-            background-size: 1540px 750px;
             font-size: 16px;
             font-family: 'Times New Roman', Times, serif;
             display: flex;
@@ -18,6 +15,7 @@
             justify-content: center;
             align-items: center;
             margin-top: 170px;
+
         }
 
         .login{
@@ -59,15 +57,17 @@
 <body>
 <div class="login">
     <h2>Login</h2>
-    <form method="post" action="서버의url" id="login-form">
-        <input type="text" name="userName" placeholder="id">
-        <input type="password" name="userPassword" placeholder="Password">
+    <form method="post" action="{% url 'common:login' %}" id="login-form">
+        {% csrf_token %}
+        <input type="text" name="username" placeholder="id">
+        <input type="password" name="password" placeholder="Password">
         <label for="remember-check">
             <input type="checkbox" id="remember-check">아이디저장하기
         </label>
         <input type="submit" value="Login">
-
     </form>
+
+    <a href="{% url 'common:signup' %}">회원가입</a>
 </div>
 </div>
 

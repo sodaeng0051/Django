@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>SIGNUP</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            border: none;
+        }
+        h1{
+            margin-top: 80px;
+            padding-bottom: 20px;
+        }
+    .text{
+    background-color:#ffffff;
+    border: 1px solid black;
+    border-radius: 5px;
+    height: 30px;
+    width: 300px;
+}
+.name{
+    font-size: 80%;
+    position: relative;
+}
+.sign_up{
+    width: 300px;
+    height: 30px;
+    background-color: rgb(240, 165, 178);
+    border-radius: 5px;
+    transition: 0.25s;
+    border: none;
+}
+.sign_up:active{
+    background-color:  rgb(240, 165, 178);
+}
+div{
+    text-align: center;
+}
+
+
+
+    </style>
+
+    </head>
+    <body>
+        <h1 align="center">회원가입</h1>
+        <form method="post" action="">
+            {% csrf_token %}
+            <div>
+                <b class="name">UserID</b><br>
+                <input class="text" type="text" name="username" placeholder="아이디"><br><br>
+            </div>
+            <div>
+                <b class="name">PW</b><br>
+                <input class="text" type="password" name="password1" placeholder="패스워드"><br><br>
+            </div>
+            <div>
+                <b class="name">PW 확인</b><br>
+                <input class="text" type="password" name="password2" placeholder="패스워드확인"><br><br>
+            </div>
+            <div>
+                <b class="name">닉네임</b><br>
+                <input class="text" type="text" name="nickname"><br><br>
+            </div>
+            <div>
+                <b class="name">email</b><br>
+                <input class="text" type="email" name="email" placeholder="E-mail"><br><br><br>
+            </div>
+            <div>
+                <button class="sign_up" type="submit">Sign up</button>
+            </div>
+        </form>
+    </body>
+</html>

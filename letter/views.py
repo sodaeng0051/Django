@@ -1,9 +1,9 @@
 from django.shortcuts import render, redirect
 from .models import Letter
-from .forms import LetterWrite, LetterSend
+from .forms import LetterWrite
 
 # Create your views here.
-def letter_main2(request):
+def letter_log(request):
     letters = Letter.objects.filter()
     return render(request, 'letter/letter_main2.html', {'letters':letters})
 
@@ -11,30 +11,25 @@ def letter_write(request):
     if request.method == "POST":
         form = LetterWrite(request.POST)
         if form.is_valid():
-            letter = form.save(commit=False)
-            letter.save()
+            todo = form.save(commit=False)
+            todo.save()
             return redirect('letter_write')
     else:
         form = LetterWrite()
     return render(request, 'letter/letter_write.html', {'form': form})
 
 
-def letter_list(request, pk):
-    letter = Letter.objects.get(id=pk)
-    return render(request, 'letter/letter_list.html', {'letter' : letter})
+def main(request):
+    if request.method == "GET":
+        return render(request, 'letter/letter_main2.html')
 
+    elif request.method == "POST":
+        username = request.POST['userName']
+        password = request.POST['userPassword']
+        user = authenticate(request, username=userName, password=userPassword)
 
-# def letter_main(request):
-#     letters = Letter.objects.filter()
-#     return render(request, 'letter/letter_main.html', {'letters':letters})
-#
-# def letter_send(request):
-#     if request.method == "POST":
-#         form = LetterSend(request.POST)
-#         if form.is_valid():
-#             letter = form.save(commit=False)
-#             letter.save()
-#             return redirect('letter_send')
-#     else:
-#         form = LetterSend()
-#     return render(request, 'letter/letter_send.html', {'form': form})
+        if user is not None:
+                login(request, user)
+                return HttpResponseRedirect(reverse('posts:write'))
+        else:
+            return render(request, 'letter/letter_main2.html')
