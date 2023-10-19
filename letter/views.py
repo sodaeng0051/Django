@@ -32,4 +32,9 @@ def main(request):
                 login(request, user)
                 return HttpResponseRedirect(reverse('posts:write'))
         else:
-            return render(request, 'letter/letter_main2.html')
+             return render(request, 'letter/letter_main2.html')
+
+def letter_list(request, pk):
+    letters = Letter.objects.get(id=pk)
+    return render(request, 'letter/letter_list.html', {'letters':letters})
+
